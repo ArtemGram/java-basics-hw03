@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Student {
+
   private int rating;
   private String name;
   public static int count;
@@ -14,26 +17,39 @@ public class Student {
     count++;
   }
 
-  public Student() {
-    count++;
-  }
-
   public static void main(String[] args) {
-    Student student1 = new Student("Petro");
-    Student student2 = new Student("Volodymyr");
-
-    student1.setRating(15);
-    student2.setRating(30);
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Please provide info about student1: " + student1.getName() + " Rating: " + student1.getRating());
-    double avr1 = scanner.nextDouble();
+    System.out.print("Enter a name of student 1: ");
+    String tmp = scanner.nextLine();
+    Student student1 = new Student(tmp);
+    System.out.print("Enter a name of student 2: ");
+    tmp = scanner.nextLine();
+    Student student2 = new Student(tmp);
+    System.out.print("Enter a name of student 3: ");
+    tmp = scanner.nextLine();
+    Student student3 = new Student(tmp);
+    System.out.println();
 
-    System.out.println("Please provide info about" + student2 + " Rating ");
-    double avr2 = scanner.nextDouble();
+    System.out.print("Enter a rating of student 1: ");
+    int temp = scanner.nextInt();
+    student1.setRating(temp);
+    System.out.print("Enter a rating of student 2: ");
+    temp = scanner.nextInt();
+    student2.setRating(temp);
+    System.out.print("Enter a rating of student 3: ");
+    temp = scanner.nextInt();
+    student3.setRating(temp);
+    System.out.println();
 
-    double avRating = ((avr1 + avr2) / 2);
-    System.out.println("Current average rating is:" + ((avr1 + avr2) / 2));
+    System.out.println("Avg rating = " + getAvgRating() + "\n");
+
+    System.out.print("Enter a new rating of student 1: ");
+    temp = scanner.nextInt();
+    student1.changeRating(temp);
+    System.out.println();
+
+    System.out.println("New avg rating = " + getAvgRating());
 
   }
 
