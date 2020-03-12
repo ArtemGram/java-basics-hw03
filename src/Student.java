@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Student {
@@ -9,8 +7,6 @@ public class Student {
   public static int count;
   public static double summaryRating;
   public static double averageStaticRating;
-
-  // TODO implement Student class according to the instructions provided in the README.md file
 
   public Student(String name) {
     this.name = name;
@@ -60,7 +56,6 @@ public class Student {
     }
     return averageStaticRating;
 
-  // TODO return average rating of all students
 }
 
   public String getName() {
@@ -68,7 +63,7 @@ public class Student {
   }
 
     public void setName(String name) {
-    this.name = name; // TODO set student's name
+    this.name = name;
   }
 
   public int getRating() {
@@ -82,7 +77,6 @@ public class Student {
   }
 
   public boolean betterStudent(Student student) {
-    // TODO return the result of comparing this.student's rating with the student's rating
     if (this.rating > student.rating) {
       return true;
     }
@@ -94,7 +88,6 @@ public class Student {
   public void changeRating(int rating) {
     summaryRating -= this.rating;
     this.rating = setRating(rating);
-    // TODO change this student's rating and average rating of all students
   }
 
   public static void removeStudent(Student student) {
@@ -102,12 +95,10 @@ public class Student {
     student.rating = 0;
     summaryRating = 0;
     averageStaticRating = 0;
-    // TODO remove student
   }
 
   @Override
   public String toString() {
     return getName() + " " + getRating() + " ";
-    // TODO return String with name and rating of this student
   }
 }
